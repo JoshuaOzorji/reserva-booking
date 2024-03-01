@@ -46,7 +46,10 @@ router.post(
 				maxAge: 86400000,
 			});
 			res.status(200).json({ userId: user.id });
-		} catch (error) {}
+		} catch (error) {
+			console.log(error);
+			res.status(500).json({ message: "Something went wrong" });
+		}
 	},
 );
 router.get("/validate-token", verifyToken, (req: Request, res: Response) => {
