@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bucket {
+	@apply w-[85%] p-1 md:p-2 mx-auto transition-all delay-100;
+}
+
+.text-h1 {
+	@apply text-lg md:text-2xl;
+}
+
+.text-h2 {
+	@apply text-base md:text-lg;
+}
+
+.text-h3 {
+	@apply text-[13px] md:text-base;
+}
+
+.text-h4 {
+	@apply text-[10px] md:text-sm;
+}
+
+.text-h5 {
+	@apply text-[9px] md:text-[12px];
+}
+
+.hero-icon {
+	@apply w-6 h-6;
+}
+
+.underline-class {
+	@apply cursor-pointer hover:underline decoration-sec decoration-1 md:decoration-2 transition-all delay-200;
+}
+
+.form-focus {
+	@apply border border-white focus:outline-none focus:border-primary duration-300 transition;
+}
+
+.form-focus1 {
+	@apply border border-sec focus:outline-none focus:border-primary duration-300 transition;
+}
+
+.animate {
+	@apply transition-all duration-300;
+}
+
+.form-input {
+	@apply p-2 form-focus;
+}
+
+.form-label {
+	@apply flex flex-col text-h3;
+}
+
+.booking-form-input {
+	@apply text-gray-700 bg-gray-200 form-input cursor-not-allowed;
+}
+
+.booking-label {
+	@apply border px-2 py-1 rounded-lg border-slate-300;
+}
+
+.button {
+	@apply border bg-secText text-accent hover:bg-primary animate px-2 py-1 rounded-lg;
+}
+
+.button2 {
+	@apply border bg-primary text-accent hover:bg-secText animate p-2 rounded-lg;
+}
+
+.button3 {
+	@apply border bg-primary text-accent hover:bg-secText animate px-2 py-1 rounded-lg;
+}
+
+.required-class {
+	@apply text-[10px] md:text-[12px] text-red-600;
+}
+
+.hotels-icon {
+	@apply border border-slate-300 rounded-sm p-2 flex items-center;
+}
