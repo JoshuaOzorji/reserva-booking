@@ -19,7 +19,7 @@
 }
 
 .text-h4 {
-	@apply text-[10px] md:text-sm;
+	@apply text-[11px] md:text-sm;
 }
 
 .text-h5 {
