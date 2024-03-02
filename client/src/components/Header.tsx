@@ -7,7 +7,10 @@ const Header = () => {
 
 	return (
 		<main className='bg-primary py-2 md:py-4 font-rubik border-b border-accent sticky top-0 z-10'>
-			<div className='bucket mx-auto flex items-center justify-between space-x-4'>
+			<div
+				className={`bucket mx-auto ${
+					isLoggedIn ? "flex flex-col" : "flex flex-row"
+				} items-center justify-between space-y-2 md:space-x-0`}>
 				<span className='text-h1 text-white font-bold tracking-tight'>
 					<Link to='/'>
 						<span className='text-accent'>Reserva</span>
@@ -16,7 +19,7 @@ const Header = () => {
 				</span>
 
 				<span className='flex space-x-2 md:space-x-4 text-accent text-h4 animate'>
-					{isLoggedIn && (
+					{isLoggedIn ? (
 						<>
 							{/* My Bookings */}
 							<Link to='/my-bookings' className='underline-class'>
@@ -33,8 +36,7 @@ const Header = () => {
 								<SignOutButton />
 							</span>
 						</>
-					)}
-					{!isLoggedIn && (
+					) : (
 						<Link to='/sign-in' className='underline-class'>
 							Sign In
 						</Link>
