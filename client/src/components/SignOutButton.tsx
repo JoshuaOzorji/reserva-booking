@@ -22,6 +22,7 @@ const SignOutButton = () => {
 	const handleClick = () => {
 		mutation.mutate();
 	};
+
 	return (
 		<button className='underline-class' onClick={handleClick}>
 			Sign Out

@@ -57,11 +57,7 @@ router.get("/validate-token", verifyToken, (req: Request, res: Response) => {
 });
 
 router.post("/logout", (req: Request, res: Response) => {
-	try {
-		res.cookie("auth_token", "", { expires: new Date(0) });
-		res.status(200).json({ message: "Successfully signed out" });
-	} catch (error) {
-		res.status(500).json({ message: "Error during sign-out" });
-	}
+	res.cookie("auth_token", "", { expires: new Date(0) });
+	res.send();
 });
 export default router;
