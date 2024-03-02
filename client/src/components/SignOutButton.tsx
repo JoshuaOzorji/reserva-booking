@@ -8,8 +8,8 @@ const SignOutButton = () => {
 
 	const mutation = useMutation(apiClient.signOut, {
 		onSuccess: async () => {
-			// localStorage.removeItem("auth_token");
-			// sessionStorage.removeItem("auth_token");
+			document.cookie =
+				"auth_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
 			await queryClient.invalidateQueries("validateToken");
 			showToast({ message: "Signed Out!", type: "SUCCESS" });
