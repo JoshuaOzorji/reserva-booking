@@ -24,7 +24,7 @@ const SignOutButton = () => {
 	};
 
 	return (
-		<button className='underline-class' onClick={handleClick}>
+		<button onClick={handleClick} className='underline-class'>
 			Sign Out
 		</button>
 	);
