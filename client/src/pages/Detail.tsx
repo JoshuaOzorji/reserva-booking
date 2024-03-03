@@ -28,7 +28,7 @@ const Detail = () => {
 	}
 	return (
 		<main className='my-7 flex flex-col md:flex-row gap-6 '>
-			<section className='md:w-[65%] flex flex-col gap-4'>
+			<section className='md:w-[65%] flex flex-col gap-4 border p-3 rounded-md'>
 				<div>
 					<span className='flex'>
 						{Array.from({ length: hotel.starRating }).map(() => (

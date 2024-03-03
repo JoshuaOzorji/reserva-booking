@@ -11,6 +11,8 @@ import { SignInFormData } from "./pages/SignIn";
 const API_BASE_URL =
 	import.meta.env.VITE_API_BASE_URL || "https://reserva-booking.onrender.com";
 
+// const API_BASE_URL = "http://localhost:7000";
+
 export const fetchCurrentUser = async (): Promise<UserType> => {
 	const response = await fetch(`${API_BASE_URL}/api/users/me`, {
 		credentials: "include",
@@ -61,7 +63,9 @@ export const signOut = async () => {
 		credentials: "include",
 		method: "POST",
 	});
-	return response;
+	if (!response.ok) {
+		throw new Error("Error during sign out");
+	}
 };
 
 // VALIDATE TOKEN
