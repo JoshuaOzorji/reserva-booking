@@ -60,7 +60,6 @@ router.post("/logout", (req: Request, res: Response) => {
 	res.cookie("auth_token", "", {
 		expires: new Date(0),
 		httpOnly: true,
-		secure: true,
 	});
 	res.send();
 });
