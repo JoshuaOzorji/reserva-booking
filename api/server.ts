@@ -23,20 +23,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // PRODUCTION
-app.use(
-	cors({
-		origin: process.env.FRONTEND_URL || "https://reserva-booking.vercel.app",
-		credentials: true,
-	}),
-);
-
-// DEVELOPMENT
 // app.use(
 // 	cors({
-// 		origin: "http://localhost:5173",
+// 		origin: process.env.FRONTEND_URL || "https://reserva-booking.vercel.app",
 // 		credentials: true,
 // 	}),
 // );
+
+// DEVELOPMENT
+app.use(
+	cors({
+		origin: "http://localhost:5173",
+		credentials: true,
+	}),
+);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
