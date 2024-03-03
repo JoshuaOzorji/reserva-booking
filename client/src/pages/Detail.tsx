@@ -29,13 +29,16 @@ const Detail = () => {
 	return (
 		<main className='my-7 flex flex-col md:flex-row gap-6 '>
 			<section className='md:w-[65%] flex flex-col gap-4 border p-3 rounded-md'>
-				<div>
+				<div className='my-2 md:my-3'>
 					<span className='flex'>
 						{Array.from({ length: hotel.starRating }).map(() => (
 							<AiFillStar className='fill-yellow-400' />
 						))}
 					</span>
 					<h1 className='text-h2 font-bold font-rubik text-h2'>{hotel.name}</h1>
+					<h4 className='text-h3 font-lato -mt-1 font-light'>
+						{hotel.city}, {hotel.country}
+					</h4>
 				</div>
 
 				{/* IMAGE */}

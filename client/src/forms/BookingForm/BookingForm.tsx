@@ -5,7 +5,7 @@ import { StripeCardElement } from "@stripe/stripe-js";
 import { useSearchContext } from "../../contexts/SearchContext";
 import * as apiClient from "../../api-client";
 import { useAppContext } from "../../contexts/AppContext";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useMutation } from "react-query";
 
 type Props = {
@@ -32,12 +32,16 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
 	const search = useSearchContext();
 	const { hotelId } = useParams();
 	const { showToast } = useAppContext();
+	const navigate = useNavigate();
 
 	const { mutate: bookRoom, isLoading } = useMutation(
 		apiClient.createRoomBooking,
 		{
 			onSuccess: () => {
 				showToast({ message: "Booking Saved", type: "SUCCESS" });
+				setTimeout(() => {
+					navigate("/");
+				}, 3000);
 			},
 			onError: () => {
 				showToast({ message: "Booking Failed", type: "ERROR" });
@@ -79,7 +83,7 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className='flex flex-col border border-slate-300 p-4 gap-4 font-lato text-h3'>
+			className='flex flex-col border border-slate-300 p-4 gap-4 font-lato text-h3 rounded-md'>
 			<h2 className='text-h2 font-bold'>Confirm your details</h2>
 
 			<div className='flex flex-col md:grid grid-cols-2 gap-x-3 gap-y-2'>

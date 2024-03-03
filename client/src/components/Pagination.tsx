@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 export type Props = {
 	page: number;
 	pages: number;
@@ -5,6 +7,11 @@ export type Props = {
 };
 
 const Pagination = ({ page, pages, onPageChange }: Props) => {
+	// SCROLL TO TOP
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	const pageNumbers = [];
 
 	for (let i = 1; i <= pages; i++) {

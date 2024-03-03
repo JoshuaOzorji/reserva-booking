@@ -6,7 +6,7 @@ const Header = () => {
 	const { isLoggedIn } = useAppContext();
 
 	return (
-		<main className='bg-primary py-3 md:py-4 font-rubik border-b border-accent sticky top-0 z-10'>
+		<main className='bg-primary py-2 md:py-3 font-rubik border-b border-accent sticky top-0 z-10'>
 			<div
 				className={`bucket mx-auto ${
 					isLoggedIn ? "flex flex-col" : "flex flex-row"

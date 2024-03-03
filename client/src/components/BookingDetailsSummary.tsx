@@ -17,7 +17,7 @@ const BookingDetailsSummary = ({
 	hotel,
 }: Props) => {
 	return (
-		<main className='flex flex-col border p-4 text-h4 font-lato gap-2 border-slate-300 shadow-sm'>
+		<main className='flex flex-col border p-4 text-h4 font-lato gap-2 border-slate-300 shadow-sm rounded-md'>
 			<h2 className='text-h2 font-bold'>Your booking details</h2>
 
 			<div className='booking-label'>
