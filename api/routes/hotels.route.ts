@@ -101,7 +101,6 @@ router.get("/search", async (req: Request, res: Response) => {
 		};
 		res.json(response);
 	} catch (error) {
-		console.log("error", error);
 		res.status(500).json({ message: "Something went wrong" });
 	}
 });
@@ -121,7 +120,6 @@ router.get(
 			const hotel = await Hotel.findById(id);
 			res.json(hotel);
 		} catch (error) {
-			console.log(error);
 			res.status(500).json({ message: "Error fetching hotel" });
 		}
 	},
@@ -170,7 +168,6 @@ router.post(
 			await hotel.save();
 			res.status(200).send();
 		} catch (error) {
-			console.log(error);
 			res.status(500).json({ message: "Something went wrong" });
 		}
 	},

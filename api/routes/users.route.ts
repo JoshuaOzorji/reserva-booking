@@ -59,7 +59,6 @@ router.post(
 			});
 			res.status(200).send({ message: "Registration successful!" });
 		} catch (error) {
-			console.log(error);
 			res.status(500).send({ message: "Something went wrong" });
 		}
 	},

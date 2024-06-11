@@ -25,16 +25,9 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 // PRODUCTION
 app.use((0, cors_1.default)({
-    origin: process.env.FRONTEND_URL || "https://reserva-booking.vercel.app",
+    origin: process.env.FRONTEND_URL,
     credentials: true,
 }));
-// DEVELOPMENT
-// app.use(
-// 	cors({
-// 		origin: "http://localhost:5173",
-// 		credentials: true,
-// 	}),
-// );
 app.use("/api/auth", auth_route_1.default);
 app.use("/api/users", users_route_1.default);
 app.use("/api/my-hotels", my_hotels_route_1.default);

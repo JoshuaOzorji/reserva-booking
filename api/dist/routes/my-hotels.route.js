@@ -57,7 +57,6 @@ router.post("/", verifyToken_1.default, [
         res.status(201).send(hotel);
     }
     catch (error) {
-        console.log("Error creating hotel:", error);
         res.status(500).json({ message: "Something went wrong" });
     }
 }));

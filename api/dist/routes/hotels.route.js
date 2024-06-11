@@ -90,7 +90,6 @@ router.get("/search", (req, res) => __awaiter(void 0, void 0, void 0, function* 
         res.json(response);
     }
     catch (error) {
-        console.log("error", error);
         res.status(500).json({ message: "Something went wrong" });
     }
 }));
@@ -105,7 +104,6 @@ router.get("/:id", [(0, express_validator_1.param)("id").notEmpty().withMessage(
         res.json(hotel);
     }
     catch (error) {
-        console.log(error);
         res.status(500).json({ message: "Error fetching hotel" });
     }
 }));
@@ -134,7 +132,6 @@ router.post("/:hotelId/bookings", verifyToken_1.default, (req, res) => __awaiter
         res.status(200).send();
     }
     catch (error) {
-        console.log(error);
         res.status(500).json({ message: "Something went wrong" });
     }
 }));

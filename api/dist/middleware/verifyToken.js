@@ -6,18 +6,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const verifyToken = (req, res, next) => {
     const token = req.cookies["auth_token"];
-    console.log("Token:", token);
     if (!token) {
         return res.status(401).json({ message: "unauthorized" });
     }
     try {
         const decoded = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET_KEY);
-        console.log("Decoded Token:", decoded);
         req.userId = decoded.userId;
         next();
     }
     catch (error) {
-        console.error("JWT Verification Error:", error);
         return res.status(401).json({ message: "unauthorized" });
     }
 };
