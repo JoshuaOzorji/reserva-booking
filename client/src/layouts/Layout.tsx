@@ -15,7 +15,7 @@ const Layout = ({ children }: Props) => {
 			<Hero />
 			<div className='bucket flex flex-col flex-1'>
 				<SearchBar />
-				<span>{children}</span>
+				<span className=''>{children}</span>
 			</div>
 			<Contact />
 			<Footer />
