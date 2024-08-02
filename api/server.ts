@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import job from "./cron";
 import mongoose from "mongoose";
 import "dotenv/config";
 import authRoutes from "./routes/auth.route";
@@ -21,6 +22,7 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+job.start();
 
 // PRODUCTION
 app.use(
